@@ -1,4 +1,4 @@
-// import { Navbar } from '@/components/navbar';
+import Nav from '@/components/nav/Nav';
 import './globals.css';
 import { Figtree } from 'next/font/google';
 
@@ -17,7 +17,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={font.className}>
-				{/* <Navbar /> */}
+				<Nav />
 				{children}
 			</body>
 		</html>
