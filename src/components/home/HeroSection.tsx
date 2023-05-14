@@ -1,16 +1,19 @@
-'use client'; 
+'use client';
 
 import { Button, Typography, Image } from 'antd';
 import styles from './HeroSection.module.scss';
 
 function HeroSection() {
+	const message = () => {
+		alert('This feature is not available yet!');
+	};
 	return (
 		<section className={styles.hero}>
 			<div className={styles.header}>
 				<Typography.Title className={styles.title}>
 					WeWork + Salesforce
 				</Typography.Title>
-				<Button className={styles.btn} size='large'>
+				<Button className={styles.btn} size='large' onClick={message}>
 					Publish/Share
 				</Button>
 			</div>

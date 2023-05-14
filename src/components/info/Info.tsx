@@ -65,6 +65,9 @@ const Info: React.FC = () => {
 	const handleSideMenuClick = (key: string): any => {
 		setActiveSideMenuItem(key);
 	};
+	const message = () =>{
+		alert("This feature is not available yet!")
+	}
 	return (
 		<section className={styles['project-scope-recap']}>
 			<div className={styles.header}>
@@ -166,7 +169,7 @@ const Info: React.FC = () => {
 								For all the ways you work, we are here
 							</Typography.Text>
 						</div>
-						<div className={styles.options}>
+						<div className={styles.options} onClick={message}>
 							<Img
 								src='/images/other-options.png'
 								alt='Other Options'
