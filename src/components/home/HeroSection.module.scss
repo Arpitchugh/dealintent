@@ -1,0 +1,143 @@
+// Break-points
+$breakpoint-small: 480px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+// Colors
+$white: #ffffff;
+
+@mixin respond-to($breakpoint) {
+	@media (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+.hero {
+	padding: 0 2.5rem;
+
+	@include respond-to($breakpoint-medium) {
+		padding: 0 1.5rem;
+	}
+
+	@include respond-to($breakpoint-small) {
+		padding: 0 1rem;
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.5rem 0;
+
+		.title {
+			font-size: 35px;
+			color: #04433b;
+			font-weight: 800;
+
+			@include respond-to($breakpoint-medium) {
+				font-size: 25px;
+				line-height: 30px;
+			}
+
+			@include respond-to($breakpoint-small) {
+				font-size: 18px;
+				line-height: 22px;
+			}
+		}
+
+		.btn {
+			background-color: #00b686;
+			color: $white;
+			font-size: 1rem;
+			font-weight: 700;
+		}
+	}
+
+	.background {
+		position: relative;
+
+		.image {
+			border-radius: 0.75rem;
+			height: 192px;
+
+			@include respond-to($breakpoint-medium) {
+				height: 132px;
+			}
+
+			@include respond-to($breakpoint-small) {
+				height: 88px;
+			}
+		}
+
+		.wrapper {
+			background: rgba(255, 255, 255, 0.7);
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 45%;
+			clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+
+			.proposal {
+				color: #000000;
+				font-size: 48px;
+				line-height: 48px;
+				font-weight: 900;
+
+				@include respond-to($breakpoint-medium) {
+					font-size: 30px;
+					line-height: 31px;
+				}
+
+				@include respond-to($breakpoint-small) {
+					font-size: 16px;
+					line-height: 18px;
+				}
+			}
+		}
+
+		.weSales {
+			position: absolute;
+			top: 75%;
+			left: 1.5rem;
+			background-color: $white;
+			padding: 1rem 1.5rem;
+			border-radius: 0.75rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.75rem;
+
+			.image {
+				height: 77px;
+				width: 77px;
+
+				@include respond-to($breakpoint-medium) {
+					width: 53px;
+					height: 53px;
+				}
+
+				@include respond-to($breakpoint-small) {
+					width: 36px;
+					height: 36px;
+				}
+			}
+
+			span {
+				font-size: 2.5rem;
+				font-weight: 300;
+
+				@include respond-to($breakpoint-medium) {
+					font-size: 2rem;
+				}
+
+				@include respond-to($breakpoint-small) {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
