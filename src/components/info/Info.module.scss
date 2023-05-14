@@ -1,0 +1,144 @@
+// Colors
+$border-color: #d3d7d7;
+
+// Break-points
+$breakpoint-small: 480px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+@mixin respond-to($breakpoint) {
+	@media (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+// --------------------- project-scope-recap -----------------
+.project-scope-recap {
+	padding: 0 2.5rem;
+	margin: 7rem 0;
+
+	@include respond-to($breakpoint-small) {
+		padding: 0 1rem;
+		margin: 4rem 0;
+	}
+
+	@include respond-to($breakpoint-medium) {
+		padding: 0 1.5rem;
+		margin: 5rem 0;
+	}
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+
+		.title {
+			font-size: 25px;
+			font-weight: 700;
+			color: #233735;
+
+			@include respond-to($breakpoint-medium) {
+				font-size: 20px;
+				line-height: 20px;
+			}
+
+			@include respond-to($breakpoint-small) {
+				font-size: 16px;
+			}
+		}
+
+		.mutual-action-plan {
+			display: flex;
+			flex-direction: column;
+
+			.info {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				.heading {
+					font-size: 14px;
+					color: #7b8786;
+
+					@include respond-to($breakpoint-small) {
+						font-size: 10px;
+					}
+				}
+
+				.percent {
+					font-size: 14px;
+					color: #00b686;
+					font-weight: 800;
+
+					@include respond-to($breakpoint-small) {
+						font-size: 10px;
+					}
+				}
+			}
+
+			.progress {
+				display: flex;
+				align-items: center;
+				gap: 3px;
+
+				.item {
+					background: #d3d7d7;
+					width: 8px;
+					height: 5px;
+
+					&:first-child {
+						background-color: #00b686;
+						border-top-left-radius: 5px;
+						border-bottom-left-radius: 5px;
+					}
+
+					&:last-child {
+						border-top-right-radius: 5px;
+						border-bottom-right-radius: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	.content {
+		display: flex;
+		gap: 1.5rem;
+		align-items: flex-start;
+	}
+}
+
+// --------------------- sidebarMenu -----------------
+.sidebarMenu {
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 1rem 0.75rem;
+	display: flex;
+	flex-direction: column;
+	max-width: 12.5rem;
+
+	.menuItem {
+		padding: 0.75rem 0;
+		border-top: 1px solid #e9ebeb;
+		color: #7b8786;
+		font-size: 14px;
+		line-height: 18px;
+
+		&:first-child {
+			border-top: none;
+			font-weight: 700;
+			font-size: 18px;
+			color: #657372;
+			padding-top: unset;
+		}
+
+		&:last-child {
+			padding-bottom: unset;
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		display: none;
+	}
+}
