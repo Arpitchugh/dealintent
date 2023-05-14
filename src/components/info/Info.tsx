@@ -3,6 +3,32 @@
 import { Tabs, TabsProps, Typography } from 'antd';
 import styles from './Info.module.scss';
 
+const topMenu = [
+	{
+		key: '1',
+		label: `Basic Info`,
+	},
+	{
+		key: '2',
+		label: `Files`,
+	},
+	{
+		key: '3',
+		label: `Mutual Action Plan`,
+	},
+	{
+		key: '4',
+		label: `Contact`,
+	},
+	{
+		key: '5',
+		label: `Internal Actions`,
+	},
+];
+
+
+
+
 const SideBar_items = [
 	{
 		key: '1',
@@ -51,7 +77,15 @@ const Info: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			{/* <TopMenu /> */}
+            {/*  topMenu */}
+			<div className={styles.topMenu}>
+				{topMenu.map(item => (
+					<div key={item.key} className={styles.menuItem}>
+						{item.label}
+					</div>
+				))}
+			</div>
+			{/* SideBar */}
 			<div className={styles.content}>
 				<div className={styles.sidebarMenu}>
 					{SideBar_items.map(item => (
